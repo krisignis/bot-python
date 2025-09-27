@@ -1,7 +1,7 @@
 #Kodland-Bot(client class)
 import discord
 # local own library
-from bot_logic import gen_pass,coinflip,roll_dice,makan
+from bot_logic import gen_pass,coinflip,roll_dice,makan,tolong
 # Variabel intents menyimpan hak istimewa bot
 intents = discord.Intents.default()
 # Mengaktifkan hak istimewa message-reading
@@ -29,6 +29,8 @@ async def on_message(message):
         await message.channel.send(f"Dadu yang dihasilkan adalah {roll_dice()}")
     elif message.content.startswith('maem'):
         await message.channel.send(f"Makanan hari ini adalah {makan()}")
+    elif message.content.startswith('help'):
+        await message.channel.send(f"Bantuan: {tolong()}")
 
 @client.event    
 async def on_member_join(self, member):
@@ -38,4 +40,4 @@ async def on_member_join(self, member):
         await guild.system_channel.send(to_send)
         await guild.system_channel.send("try to type $halo or $bye or pass")
 
-client.run("tokenmu")
+client.run("TOKEN")
