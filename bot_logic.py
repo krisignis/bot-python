@@ -26,7 +26,8 @@ def makan():
     else:
         return "mie ayam :scream:"
 
-
+def tolong():
+    return 'List of commands:\n$hi\n$bye\npass\ncoin\ndice\nmaem'
 
 
 
